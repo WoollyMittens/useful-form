@@ -45,13 +45,21 @@ useful.form.setup(parent, {
 ```
 
 **id : {string}** - The ID attribute of an element somewhere in the document.
+
 **parent : {DOM node}** - The DOM element around which the functionality is centred.
+
 **input : {string}** - A CSS Rule that describes the form elements within *parent*.
+
 **output : {string}** - A CSS Rule that describes the output area within the *parent*.
+
 **failure : {string}** - An HTML template for a validation error message.
+
 **success : {string}** - An HTML template for confirming a successful submission.
+
 **ajax : {boolean}** - Whether the form is to be submitted using AJAX.
+
 **url : {string}** - The URL of the web-service to be used for a form submission using AJAX.
+
 **method : {string}** - Can be either POST or GET. The default method is GET.
 
 ```javascript
@@ -65,8 +73,11 @@ useful.placeholder.init(parent, {
 ```
 
 **color : {string}** - A colour in hex format for the placeholder text.
+
 **support : {boolean}** - A test to determine which browsers have native support for the placeholder feature.
+
 **offsetX : {integer}** - A fudge value in pixels to help precise horizontal positioning of the placeholder text.
+
 **offsetY : {integer}** - A fudge value in pixels to help precise vertical positioning of the placeholder text.
 
 ```javascript
@@ -78,6 +89,7 @@ useful.color.init(parent, {
 ```
 
 **color : {string}** - A colour in hex format for the placeholder text.
+
 **support : {boolean}** - A test to determine which browsers have native support for the color input element.
 
 ```javascript
@@ -92,9 +104,13 @@ useful.date.init(parent, {
 ```
 
 **years : {array}** - The offsets between the current year and the maximum and minimum year.
+
 **months : {array}** - The names of the months for use in labels.
+
 **days : {array}** - The names of the days for use in labels.
+
 **format : {string}** - The expected format of the date.
+
 **support : {boolean}** - A test to determine which browsers have native support for the date input element.
 
 ```javascript
@@ -106,6 +122,7 @@ useful.range.init(parent, {
 ```
 
 **title : {string}** - The text format of the popup label of the input element.
+
 **support : {boolean}** - A test to determine which browsers have native support for the range input element.
 
 ```javascript
@@ -132,15 +149,6 @@ useful.css.select({
 	}
 });
 ```
-
-**rule : {string}**
-The CSS Rule for the intended target(s) of the script.
-
-**handler : {function}**
-The public function that starts the script.
-
-**data : {object}**
-Name-value pairs with configuration data.
 
 ```javascript
 useful.css.select({
