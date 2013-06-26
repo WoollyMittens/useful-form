@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>useful.form.js: HTML5 Form Functionality</title>
+		<style>
+			html { font-family:Sans-Serif; font-size:75%; height:100%; }
+			body { _height:100%; line-height:180%; margin:0; min-height:100%; padding:0; }
+			.padded { padding:2em; }
+		</style>
+		<!--[if lte IE 9]>
+			<meta http-equiv="imagetoolbar" content="no"/>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<section class="example rightExample clearfix">
+			<article class="example">
+				<h2>HTML5 Form Functionality</h2>
+				<p>A form using HTML5 form elements, that validates both client- and server-side and stores the entries in XML.</p>
+				<p><a class="button downloadButton" href="http://www.woollymittens.nl/downloads/form.zip" target="_blank">Download</a></p>
+			</article>
+			<aside class="example">
+
+				<!-- Cut below this -->
+				<style>@import url("./css/form.css")</style>
+				<form action="./default.php" id="test" method="get" novalidate>
+					<input type="hidden" name="form_submitted" value="false"/>
+					<input type="hidden" name="url" value=""/>
+					<fieldset>
+						<legend>Example Form</legend>
+						<fieldset>
+							<legend>
+								<label for="form_title_m">Radio Options<em>*</em>:</label>
+							</legend>
+							<label>
+								<input name="form_myradio" class="type_radio " required="required" type="radio" title="My Radio" value="a" />
+								Mr.
+							</label>
+							<label>
+								<input name="form_myradio" class="type_radio " required="required" type="radio" title="My Radio" value="b" />
+								Ms.
+							</label>
+						</fieldset>
+						<label>
+							Text Input<em>*</em>:
+							<input name="form_mytext" pattern="^.+$" class="type_text " required="required" type="text" title="My Text" value="" />
+						</label>
+						<label>
+							Select List<em>*</em>:
+							<select name="form_myselect" class="type_select " required="required" title="My selection" >
+								<option value="">-</option>
+								<option value=A>Option A</option>
+								<option value=B>Option B</option>
+							</select>
+						</label>
+						<fieldset class="line">
+							<legend>
+								<label for="form_myprefix">Multi Field Inputs<em>*</em>:</label>
+							</legend>
+							<label>
+								Prefix:
+								<select name="form_myprefix" class="type_select small" required="required" title="My Prefix" >
+									<option value="">-</option>
+									<option value=01>1</option>
+									<option value=02>2</option>
+								</select>
+							</label>
+							<label>
+								Number:
+								<input name="form_mynumber" pattern="^\d+$" class="type_number text large" required="required" type="number" title="My Number" value=""  placeholder="number"/>
+							</label>
+						</fieldset>
+						<label>
+							Email<em>*</em>:
+							<input name="form_myemail" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" class="type_email " required="required" type="email" title="My Email" value=""  placeholder="name@domain.com"/>
+						</label>
+						<label>
+							File<em>*</em>:
+							<input name="form_myfile" pattern="^.+$" class="type_file file" type="file" title="My File" value="" />
+						</label>
+					</fieldset>
+					<fieldset>
+						<legend>HTML5 Form Elements</legend>
+						<label>
+							Range - <span id="form_myrange_output">0</span>:
+							<input name="form_myrange" pattern="^.+$" class="type_range range" type="range" title="My Range" value=""  min="0" max="100"/>
+						</label>
+						<script>
+							// example event handler
+							updateValue = function (event, element) {element = element || this; element.value = element.value || 0; document.getElementById('form_myrange_output').innerHTML = parseInt(element.value);}
+							updateValue(null, document.getElementsByName('form_myrange')[0]);
+							document.getElementsByName('form_myrange')[0].onchange = updateValue;
+						</script>
+						<label>
+							Date:
+							<input name="form_mydate" pattern="^.+$" class="type_date date" type="date" title="My Date" value=""  placeholder="day/month/year"/>
+							</label>
+						<label>
+							Colour:
+							<input name="form_mycolour" pattern="^.+$" class="type_color color" type="color" title="My Colour" value=""  placeholder="#FFFFFF"/>
+						</label>
+					</fieldset>
+					<fieldset>
+						<legend>Your Comments</legend>
+						<label>
+							Message:
+							<textarea name="form_comments" class="type_textarea " title="Message" ></textarea>
+						</label>
+						<fieldset class="list">
+							<legend>
+								<label for="form_option_a">Options:</label>
+							</legend>
+							<label>
+								<input name="form_updates" class="type_checkbox " type="checkbox" title="Options" value="1" />
+								Sign me up for updates
+							</label>
+							<label>
+								<input name="form_agree" class="type_checkbox " required="required" type="checkbox" title="Agreement" value="1" />
+								I agree with the <a href="#">terms and conditions</a><em>*</em>
+							</label>
+						</fieldset>
+					</fieldset>
+					<div class="summary"></div>
+					<div class="footer">
+						<button class="button" type="submit" name="form_submit">Submit</button>
+						<em>* Indicates a required field</em>
+					</div>
+				</form>
+				<script src="./js/useful.form.js"></script>
+				<script>
+				//<!--
+
+					/*
+						Form validation
+					*/
+
+					useful.css.select({
+						rule : 'form',
+						handler : useful.form.setup,
+						data : {
+							// input and output elements
+							'input' : 'input, select, textarea',
+							'output' : 'div.summary',
+							// report strings
+							'failure' : '<div class="failure"><h3>Please correct the following problem(s):</h3>{0}</div>',
+							'success' : '<div class="success"><h3>The form has been received successfully.</h3>{0}</div>',
+							// ajax functionality
+							'ajax' : false,
+							'url' : null,
+							'method' : null
+						}
+					});
+
+					/*
+						Placeholder text
+					*/
+
+					useful.css.select({
+						rule : 'input, textarea',
+						handler : useful.placeholder.init,
+						data : {
+							// placeholder color
+							'color' : '#999',
+							// browsers that are assumed to have native support for <input placeholder='Foo bar'/>
+							'support' : navigator.userAgent.match(/webkit|firefox|opera|msie 10/gi),
+							// position tweak
+							'offsetX' : 10,
+							'offsetY' : 30
+						}
+					});
+
+					/*
+						Colour picker
+					*/
+
+					useful.css.select({
+						rule : 'input.color',
+						handler : useful.color.init,
+						data : {
+							// initial color
+							'color' : '#FF0000',
+							// browsers that are assumed to have native support for <input type='range'/>
+							'support' : navigator.userAgent.match(/webkit|opera|msie 10/gi)
+						}
+					});
+
+					/*
+						Date picker
+					*/
+
+					useful.css.select({
+						rule : 'input.date',
+						handler : useful.date.init,
+						data : {
+							// names
+							'years' : [20, -120],
+							'months' : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+							'days' : ['s', 'm', 't', 'w', 't', 'f', 's'],
+							// format of the output date options: d, m, M, y
+							'format' : 'd/m/y',
+							// browsers that are assumed to have native support for <input type='range'/>
+							'support' : navigator.userAgent.match(/webkit|opera|msie 10/gi)
+						}
+					});
+
+					/*
+						Range slider
+					*/
+
+					useful.css.select({
+						rule : 'input.range',
+						handler : useful.range.init,
+						data : {
+							// information tooltip
+							'title' : '{value}% ({min}-{max})',
+							// browsers that are assumed to have native support for <input type='range'/>
+							'support' : navigator.userAgent.match(/webkit|opera|msie 10/gi)
+						}
+					});
+
+					/*
+						File selector
+					*/
+
+					useful.css.select({
+						rule : 'input.file',
+						handler : useful.file.init,
+						data : {
+							'foo' : 'bar'
+						}
+					});
+
+				//-->
+				</script>
+				<!-- Cut above this -->
+
+			</aside>
+		</section>
+	</body>
+</html>

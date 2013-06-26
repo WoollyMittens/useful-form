@@ -1,0 +1,71 @@
+/*
+	Buttons
+*/
+
+@media all {
+
+	@import "compass/css3";
+	@import "compass/utilities";
+
+	/*
+		Link button
+	*/
+	.button {
+		@include background(linear-gradient(top, #fff 0%, #fff 3%, #ccc 3%, #999 97%, #666 97%, #666 100%));
+		@include box-shadow(0 1px 3px #999);
+		@include border-radius(3px);
+		background-color : #ccc;
+		border : solid 1px #000;
+		color : #333 !important;
+		cursor : pointer;
+		display : inline-block;
+		overflow : visible;
+		padding : 0 15px 1px 15px;
+		*padding : 0 15px 2px 15px;
+		text-shadow: #ccc 1px 1px 0;
+		text-decoration : none !important;
+	}
+	.button:hover {
+		@include background(linear-gradient(top, #ccc 0%, #ccc 3%, #999 3%, #ccc 97%, #333 97%, #666 100%));
+		@include box-shadow(0 1px 2px #999);
+		background-color : #999;
+		color : #000 !important;
+	}
+
+	/*
+		Download button
+	*/
+	.button.downloadButton {
+		@include background(linear-gradient(top, #ffc 0%, #ffc 3%, #cc9 3%, #996 97%, #663 97%, #663 100%));
+		background-color : #996;
+		color : #330 !important;
+
+	}
+	.button.downloadButton:hover {
+		@include background(linear-gradient(top, #cc9 0%, #cc9 3%, #996 3%, #cc9 97%, #330 97%, #663 100%));
+		background-color : #cc9;
+		color : #000 !important;
+	}
+
+	/*
+		Form button
+	*/
+	button.button {
+		line-height : 180%;
+		overflow : visible;
+		padding : 0 15px 0 15px;
+	}
+
+}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 980px) and (max-width: 1199px) {}
+
+@media (min-width: 768px) and (max-width: 979px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 480px) {}
+
+@media print {}

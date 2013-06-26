@@ -1,0 +1,532 @@
+/*
+	Example Styling for a Contact Form
+*/
+
+@media all {
+
+	@import "compass/css3";
+	@import "compass/utilities";
+	@import "_buttons";
+
+	/*
+		Form layout
+	*/
+
+	form#test {
+		fieldset {
+			display : block;
+			padding : 0;
+			margin : 0 0 1em 0;
+		}
+		> fieldset {
+			> legend {
+				display : block;
+				font-weight : bold;
+				margin : 0 0 0.5em 0;
+			}
+		}
+	}
+
+	/*
+		Form fields
+	*/
+
+	form#test {
+		> fieldset {
+			> label {
+				display : block;
+				position : relative;
+			}
+		}
+		fieldset {
+			label {
+				em {
+					color : Red;
+					font-weight : bold;
+				}
+				input {
+					vertical-align : middle;
+				}
+				input[type=file] {
+					display : block;
+				}
+				input[type=color], input[type=range], input[type=number], input[type=date], input[type=text], input[type=email], select, textarea {
+					@include box-shadow(inset 0 0 5px #ccc);
+					@include border-radius(3px);
+					@include box-sizing(border-box);
+					*behavior : url(./js/boxsizing.htc);
+					background : #fff;
+					border : solid 1px #666;
+					display : block;
+					font-family : Arial, Sans-Serif;
+					height : 28px;
+					margin : 5px 0 5px;
+					padding : 5px 8px 5px 8px;
+					width : 100%;
+				}
+				input[type=checkbox], input[type=radio] {
+					margin : 0 2px 5px 0;
+					margin-top : 3px\9;
+				}
+				select {
+					height : 28px;
+					padding : 5px 5px 5px 8px;
+				}
+				textarea {
+					padding : 5px 8px 5px 8px;
+					height : 10em;
+				}
+			}
+		}
+	}
+
+	/*
+		Groupings of field
+	*/
+
+	form#test {
+		fieldset {
+			fieldset {
+				margin : 0;
+
+				label {
+					margin-right : 10px;
+				}
+			}
+		}
+	}
+
+	/*
+		Fields arranged in a line
+	*/
+
+	form#test {
+		fieldset {
+			fieldset.line {
+				> label {
+					display : inline-block;
+					line-height : 0;
+					text-indent : -999em;
+					vertical-align : top;
+				}
+				label {
+					.small {
+						width : 4em;
+					}
+					.large {
+						width : 8em;
+					}
+					.medium {
+						width : 6em;
+					}
+				}
+			}
+		}
+	}
+
+	/*
+		Checkboxes arranged in a list
+	*/
+
+	form#test {
+		fieldset {
+			fieldset.list {
+				legend {
+					display : none;
+				}
+				label {
+					display : block;
+				}
+			}
+		}
+	}
+
+	/*
+		Error messages
+	*/
+
+	form#test {
+		fieldset {
+			label.error {
+				color : Red;
+				input[type=color], input[type=range], input[type=number], input[type=date], input[type=text], input[type=email], select, textarea {
+					border : solid 1px Red;
+				}
+			}
+			label {
+				input[type=color].error, input[type=range].error, input[type=number].error, input[type=date].error, input[type=text].error, input[type=email].error, select.error, textarea.error {
+					border : solid 1px Red;
+				}
+				span.notification {
+					color : Red;
+				}
+			}
+		}
+	}
+
+	/*
+		Submission summary
+	*/
+
+	form#test {
+		div.summary {
+			margin : 0 0 1em 0;
+
+			div.failure {
+				color : Red;
+
+				span.notification {
+					display : block;
+				}
+			}
+			div.success {
+				color : Green;
+			}
+		}
+	}
+
+	/*
+		Form footer
+	*/
+
+	form#test {
+		div.footer {
+			margin : 0 0 1em 0;
+
+			button {
+				float : right;
+			}
+		}
+	}
+
+	/*
+		Colour input field
+	*/
+
+	span.color, input.color, input[type=color] {
+		@include box-sizing(border-box);
+		*behavior : url(./js/boxsizing.htc);
+		display : block;
+		width : 100%;
+	}
+	span.color {
+		position : relative;
+		span.color_button {
+			@include border-radius(2px);
+			background: #ff000;
+			border : solid 1px #000;
+			cursor : pointer;
+			display : block;
+			font-size : 10px;
+			height : 15px;
+			line-height : 1;
+			margin : -8px 0 0 0;
+			overflow : hidden;
+			position : absolute;
+			right : 5px;
+			text-indent : 20px;
+			top : 50%;
+			width : 15px;
+		}
+	}
+
+	/*
+		color popup
+	*/
+
+	div.color_popup {
+		@include background(linear-gradient(to bottom, #ffffff 0%,#ffffff 80%,#ffffff 80%,#cccccc 100%));
+		@include box-shadow(0 1px 3px #999);
+		@include border-radius(3px);
+		background-color : #ffffff;
+		border : solid 1px #333;
+		position : absolute;
+		width : 16em;
+		fieldset {
+			border : none;
+			margin : 0;
+			padding : 1em 1em 0 1em;
+			label {
+				display : block;
+				height : 2em;
+				line-height : 2em;
+				margin : 0 0 1em 0;
+				padding : 0;
+				position : relative;
+				vertical-align : middle;
+				input {
+					position : absolute;
+					right : 0;
+					text-align : right;
+					top : 0;
+					width : 8em;
+				}
+			}
+			span.range {
+				margin : 0 0 1em 0;
+			}
+		}
+	}
+	div.color_popup.color_hidden {
+		visibility : hidden;
+	}
+	div.color_popup.color_visible {
+		visibility : visible;
+	}
+
+	/*
+		calendar input field
+	*/
+
+	span.date, input.date, input[type=date] {
+		@include box-sizing(border-box);
+		*behavior : url(./js/boxsizing.htc);
+		display : block;
+		width : 100%;
+	}
+	span.date {
+		position : relative;
+		span.date_button {
+			@include border-radius(2px);
+			background: #ffffff;
+			border : solid 1px #000;
+			cursor : pointer;
+			display : block;
+			font-size : 10px;
+			height : 15px;
+			line-height : 1;
+			margin : -8px 0 0 0;
+			overflow : hidden;
+			position : absolute;
+			right : 5px;
+			text-align : center;
+			top : 50%;
+			width : 15px;
+			span {
+				display : block;
+				border-top : solid 4px #c00;
+			}
+		}
+	}
+
+	/*
+		calendar popup
+	*/
+
+	div.date_popup {
+		@include background(linear-gradient(to bottom, #ffffff 0%,#ffffff 80%,#ffffff 80%,#cccccc 100%));
+		@include box-shadow(0 1px 3px #999);
+		@include border-radius(3px);
+		background-color: #ffffff;
+		border : solid 1px #333;
+		position : absolute;
+		width : 24em;
+		strong, div.date_selectors {
+			left : 50%;
+			margin-left : -8em;
+			position : absolute;
+			text-align : center;
+			top : 1em;
+			width : 16em;
+		}
+		strong {
+			display : none;
+		}
+		div.date_selectors {
+			select {
+				margin : 2px;
+			}
+		}
+		button {
+			position : absolute;
+			padding : 0 5px;
+		}
+		button.date_previous_month {
+			left : 1em;
+			top : 1em;
+			padding : 0 10px;
+		}
+		button.date_next_month {
+			right : 1em;
+			top : 1em;
+			padding : 0 10px;
+		}
+		button.date_previous_year {
+			display : none;
+			left : 1em;
+			top : 1em;
+		}
+		button.date_next_year {
+			display : none;
+			right : 1em;
+			top : 1em;
+		}
+		button.date_today {
+			right : 1em;
+			bottom : 1em;
+		}
+		button.date_clear {
+			left : 1em;
+			bottom : 1em;
+		}
+		div.date_calendar {
+			padding : 4em 1em 4em 1em;
+			table {
+				border-collapse : collapse;
+				border : solid 1px #666;
+				margin : 0;
+				width : 100%;
+				tr {
+					vertical-align : middle;
+				}
+				th, td {
+					border : solid 1px #666;
+					padding : 3px;
+					text-align : center;
+					width : 14%;
+				}
+				thead {
+					tr {
+						th {
+							background : #ccc;
+						}
+						th.date_first {
+							background : #bbb;
+						}
+						th.date_last {
+							background : #bbb;
+						}
+					}
+				}
+				tbody {
+					tr {
+						td {
+							background : #fff;
+							span, a {
+								color : #333;
+								display : block;
+								margin : -3px;
+								padding : 3px;
+								text-decoration : none;
+							}
+							a:hover {
+								background : #9cf;
+							}
+							span {
+								color : #999;
+							}
+						}
+						td.date_first {
+							background : #eee;
+						}
+						td.date_last {
+							background : #eee;
+						}
+						td.date_current {
+							background : #69c;
+							span, a {
+								background : #69c;
+								color : #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	div.date_popup.date_hidden {
+		visibility : hidden;
+	}
+	div.date_popup.date_visible {
+		visibility : visible;
+	}
+
+
+	/*
+		range input field
+	*/
+
+	span.range, input[type=range] {
+		border : none;
+		display : block;
+		height : 24px;
+		margin : 0;
+		padding : 0;
+		width : 100%;
+	}
+	span.range {
+		cursor : default;
+		position : relative;
+		text-align : center;
+		input {
+			visibility : hidden;
+		}
+		span.range_rails {
+			@include background(linear-gradient(top, #666666 0%,#cccccc 100%));
+			@include border-radius(3px);
+			background-color: #666666;
+			display : block;
+			height : 6px;
+			left : 0;
+			margin-top : -3px;
+			overflow : hidden;
+			position : absolute;
+			top : 50%;
+			width : 100%;
+		}
+		span.range_button {
+			@include background(linear-gradient(top, #ececec 0%, #ececec 50%, #f4f4f4 51%, #ffffff 100%));
+			@include border-radius(6px);
+			background-color : #ececec;
+			border : solid 1px #666;
+			display : block;
+			height : 12px;
+			left : 50%;
+			width : 12px;
+			margin-left : -7px;
+			margin-top : -7px;
+			overflow : hidden;
+			position : absolute;
+			top : 50%;
+		}
+		span.range_button.range_active {
+			@include background(linear-gradient(top, #d2d2d2 0%, #cfcfcf 50%, #d6d6d6 51%, #dddddd 100%));
+			background-color : #d2d2d2;
+		}
+	}
+
+	/*
+		file upload button
+	*/
+
+	div.file {
+		cursor : pointer;
+		display : block;
+		overflow : hidden;
+		position : relative;
+		input {
+			@include opacity(0.01);
+			cursor : pointer;
+			height : 100%;
+			position : absolute;
+			bottom : 0;
+			top : 0;
+			right : 0;
+			font-size : 80px;
+			z-index : 1;
+		}
+		div.file-readout {
+			display : inline;
+		}
+	}
+	div.file:before {
+		content : "Select file: ";
+	}
+
+}
+@media (min-width: 1200px) {}
+@media (min-width: 980px) and (max-width: 1199px) {}
+@media (min-width: 768px) and (max-width: 979px) {}
+@media (max-width: 767px) {}
+@media (max-width: 480px) {}
+@media print {}
