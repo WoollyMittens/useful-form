@@ -6,7 +6,9 @@
 		<style>
 			html { font-family:Sans-Serif; font-size:75%; height:100%; }
 			body { _height:100%; line-height:180%; margin:0; min-height:100%; padding:0; }
-			.padded { padding:2em; }
+			.example { max-width:960px; margin:0 auto; padding:2em; }
+			.example-left, .example-right { max-width:480px; }
+			fieldset { border:none; }
 		</style>
 		<!--[if IE]>
 			<meta http-equiv="imagetoolbar" content="no"/>
@@ -16,7 +18,7 @@
 		<![endif]-->
 	</head>
 	<body>
-		<section class="example rightExample clearfix">
+		<section class="example example-right">
 			<article class="example">
 				<h2>HTML5 Form Functionality</h2>
 				<p>A form using HTML5 form elements, that validates both client- and server-side and stores the entries in XML.</p>
