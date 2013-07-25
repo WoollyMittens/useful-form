@@ -8,6 +8,11 @@
   /*
   	Form layout
   */
+  form#test * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
   form#test fieldset {
     display: block;
     padding: 0;
@@ -270,7 +275,7 @@
     cursor: pointer;
     display: block;
     font-size: 10px;
-    height: 15px;
+    height: 17px;
     line-height: 1;
     margin: -8px 0 0 0;
     overflow: hidden;
@@ -278,7 +283,7 @@
     right: 5px;
     text-align: center;
     top: 50%;
-    width: 15px;
+    width: 17px;
   }
   span.date span.date_button span {
     display: block;

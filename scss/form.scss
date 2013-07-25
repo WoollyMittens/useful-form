@@ -1,18 +1,17 @@
 /*
 	Example Styling for a Contact Form
 */
-
 @media all {
-
 	@import "compass/css3";
 	@import "compass/utilities";
 	@import "_buttons";
-
 	/*
 		Form layout
 	*/
-
 	form#test {
+		* {
+			@include box-sizing(border-box);
+		}
 		fieldset {
 			display : block;
 			padding : 0;
@@ -26,11 +25,9 @@
 			}
 		}
 	}
-
 	/*
 		Form fields
 	*/
-
 	form#test {
 		> fieldset {
 			> label {
@@ -79,27 +76,22 @@
 			}
 		}
 	}
-
 	/*
 		Groupings of field
 	*/
-
 	form#test {
 		fieldset {
 			fieldset {
 				margin : 0;
-
 				label {
 					margin-right : 10px;
 				}
 			}
 		}
 	}
-
 	/*
 		Fields arranged in a line
 	*/
-
 	form#test {
 		fieldset {
 			fieldset.line {
@@ -123,11 +115,9 @@
 			}
 		}
 	}
-
 	/*
 		Checkboxes arranged in a list
 	*/
-
 	form#test {
 		fieldset {
 			fieldset.list {
@@ -140,11 +130,9 @@
 			}
 		}
 	}
-
 	/*
 		Error messages
 	*/
-
 	form#test {
 		fieldset {
 			label.error {
@@ -163,18 +151,14 @@
 			}
 		}
 	}
-
 	/*
 		Submission summary
 	*/
-
 	form#test {
 		div.summary {
 			margin : 0 0 1em 0;
-
 			div.failure {
 				color : Red;
-
 				span.notification {
 					display : block;
 				}
@@ -184,25 +168,20 @@
 			}
 		}
 	}
-
 	/*
 		Form footer
 	*/
-
 	form#test {
 		div.footer {
 			margin : 0 0 1em 0;
-
 			button {
 				float : right;
 			}
 		}
 	}
-
 	/*
 		Colour input field
 	*/
-
 	span.color, input.color, input[type=color] {
 		@include box-sizing(border-box);
 		*behavior : url(./js/boxsizing.htc);
@@ -229,11 +208,9 @@
 			width : 15px;
 		}
 	}
-
 	/*
 		color popup
 	*/
-
 	div.color_popup {
 		@include background(linear-gradient(to bottom, #ffffff 0%,#ffffff 80%,#ffffff 80%,#cccccc 100%));
 		@include box-shadow(0 1px 3px #999);
@@ -273,11 +250,9 @@
 	div.color_popup.color_visible {
 		visibility : visible;
 	}
-
 	/*
 		calendar input field
 	*/
-
 	span.date, input.date, input[type=date] {
 		@include box-sizing(border-box);
 		*behavior : url(./js/boxsizing.htc);
@@ -293,7 +268,7 @@
 			cursor : pointer;
 			display : block;
 			font-size : 10px;
-			height : 15px;
+			height : 17px;
 			line-height : 1;
 			margin : -8px 0 0 0;
 			overflow : hidden;
@@ -301,18 +276,16 @@
 			right : 5px;
 			text-align : center;
 			top : 50%;
-			width : 15px;
+			width : 17px;
 			span {
 				display : block;
 				border-top : solid 4px #c00;
 			}
 		}
 	}
-
 	/*
 		calendar popup
 	*/
-
 	div.date_popup {
 		@include background(linear-gradient(to bottom, #ffffff 0%,#ffffff 80%,#ffffff 80%,#cccccc 100%));
 		@include box-shadow(0 1px 3px #999);
@@ -441,11 +414,9 @@
 		visibility : visible;
 	}
 
-
 	/*
 		range input field
 	*/
-
 	span.range, input[type=range] {
 		border : none;
 		display : block;
@@ -494,11 +465,9 @@
 			background-color : #d2d2d2;
 		}
 	}
-
 	/*
 		file upload button
 	*/
-
 	div.file {
 		cursor : pointer;
 		display : block;
@@ -522,7 +491,6 @@
 	div.file:before {
 		content : "Select file: ";
 	}
-
 }
 @media (min-width: 1200px) {}
 @media (min-width: 980px) and (max-width: 1199px) {}
