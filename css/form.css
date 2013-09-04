@@ -3,600 +3,234 @@
 */
 @media all {
   /*
+  	Definitions
+  */
+  /*
   	Buttons
   */
   /*
   	Form layout
   */
-  form#test * {
+  form#exampleform * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  form#test fieldset {
+  form#exampleform fieldset {
+    margin-top: 0px;
+    margin-top: 0rem;
+    margin-right: 0px;
+    margin-right: 0rem;
+    margin-bottom: 16px;
+    margin-bottom: 1rem;
+    margin-left: 0px;
+    margin-left: 0rem;
     display: block;
     padding: 0;
-    margin: 0 0 1em 0;
   }
-  form#test > fieldset > legend {
+  form#exampleform > fieldset > legend {
+    margin-top: 0px;
+    margin-top: 0rem;
+    margin-right: 0px;
+    margin-right: 0rem;
+    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
+    margin-left: 0px;
+    margin-left: 0rem;
     display: block;
     font-weight: bold;
-    margin: 0 0 0.5em 0;
   }
 
   /*
   	Form fields
   */
-  form#test > fieldset > label {
+  form#exampleform > fieldset > label {
     display: block;
     position: relative;
   }
-  form#test fieldset label em {
+  form#exampleform fieldset label em {
     color: Red;
     font-weight: bold;
   }
-  form#test fieldset label input {
+  form#exampleform fieldset label input {
     vertical-align: middle;
   }
-  form#test fieldset label input[type=file] {
+  form#exampleform fieldset label input[type=file] {
     display: block;
   }
-  form#test fieldset label input[type=color], form#test fieldset label input[type=range], form#test fieldset label input[type=number], form#test fieldset label input[type=date], form#test fieldset label input[type=text], form#test fieldset label input[type=email], form#test fieldset label select, form#test fieldset label textarea {
+  form#exampleform fieldset label input[type=color], form#exampleform fieldset label input[type=range], form#exampleform fieldset label input[type=number], form#exampleform fieldset label input[type=date], form#exampleform fieldset label input[type=text], form#exampleform fieldset label input[type=email], form#exampleform fieldset label select, form#exampleform fieldset label textarea {
     -webkit-box-shadow: inset 0 0 5px #cccccc;
     -moz-box-shadow: inset 0 0 5px #cccccc;
     box-shadow: inset 0 0 5px #cccccc;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    *behavior: url(./js/boxsizing.htc);
+    height: 48px;
+    height: 3rem;
+    font-size: 16px;
+    font-size: 1rem;
+    padding: 11.2px;
+    padding: 0.7rem;
+    margin-top: 11.2px;
+    margin-top: 0.7rem;
+    margin-right: 0px;
+    margin-right: 0rem;
+    margin-bottom: 11.2px;
+    margin-bottom: 0.7rem;
+    margin-left: 0px;
+    margin-left: 0rem;
     background: #fff;
-    border: solid 1px #666;
+    border: solid 1px #333;
     display: block;
     font-family: Arial, Sans-Serif;
-    height: 28px;
-    margin: 5px 0 5px;
-    padding: 5px 8px 5px 8px;
     width: 100%;
   }
-  form#test fieldset label input[type=checkbox], form#test fieldset label input[type=radio] {
-    margin: 0 2px 5px 0;
-    margin-top: 3px\9;
+  form#exampleform fieldset label input[type=checkbox], form#exampleform fieldset label input[type=radio] {
+    margin-top: 11.2px;
+    margin-top: 0.7rem;
+    margin-right: 4.8px;
+    margin-right: 0.3rem;
+    margin-bottom: 11.2px;
+    margin-bottom: 0.7rem;
+    margin-left: 0px;
+    margin-left: 0rem;
+    vertical-align: baseline;
   }
-  form#test fieldset label select {
-    height: 28px;
-    padding: 5px 5px 5px 8px;
+  form#exampleform fieldset label select {
+    height: 48px;
+    height: 3rem;
+    padding: 11.2px;
+    padding: 0.7rem;
   }
-  form#test fieldset label textarea {
-    padding: 5px 8px 5px 8px;
-    height: 10em;
+  form#exampleform fieldset label textarea {
+    height: 160px;
+    height: 10rem;
+    padding: 11.2px;
+    padding: 0.7rem;
   }
 
   /*
   	Groupings of field
   */
-  form#test fieldset fieldset {
+  form#exampleform fieldset fieldset {
     margin: 0;
   }
-  form#test fieldset fieldset label {
+  form#exampleform fieldset fieldset label {
     margin-right: 10px;
   }
 
   /*
   	Fields arranged in a line
   */
-  form#test fieldset fieldset.line > label {
+  form#exampleform fieldset fieldset.line > label {
     display: inline-block;
     line-height: 0;
     text-indent: -999em;
     vertical-align: top;
   }
-  form#test fieldset fieldset.line label .small {
+  form#exampleform fieldset fieldset.line label .small {
     width: 4em;
   }
-  form#test fieldset fieldset.line label .large {
+  form#exampleform fieldset fieldset.line label .large {
     width: 8em;
   }
-  form#test fieldset fieldset.line label .medium {
+  form#exampleform fieldset fieldset.line label .medium {
     width: 6em;
   }
 
   /*
   	Checkboxes arranged in a list
   */
-  form#test fieldset fieldset.list legend {
+  form#exampleform fieldset fieldset.list legend {
     display: none;
   }
-  form#test fieldset fieldset.list label {
+  form#exampleform fieldset fieldset.list label {
     display: block;
   }
 
   /*
   	Error messages
   */
-  form#test fieldset label.error {
+  form#exampleform fieldset label.error {
     color: Red;
   }
-  form#test fieldset label.error input[type=color], form#test fieldset label.error input[type=range], form#test fieldset label.error input[type=number], form#test fieldset label.error input[type=date], form#test fieldset label.error input[type=text], form#test fieldset label.error input[type=email], form#test fieldset label.error select, form#test fieldset label.error textarea {
+  form#exampleform fieldset label.error input[type=color], form#exampleform fieldset label.error input[type=range], form#exampleform fieldset label.error input[type=number], form#exampleform fieldset label.error input[type=date], form#exampleform fieldset label.error input[type=text], form#exampleform fieldset label.error input[type=email], form#exampleform fieldset label.error select, form#exampleform fieldset label.error textarea {
     border: solid 1px Red;
   }
-  form#test fieldset label input[type=color].error, form#test fieldset label input[type=range].error, form#test fieldset label input[type=number].error, form#test fieldset label input[type=date].error, form#test fieldset label input[type=text].error, form#test fieldset label input[type=email].error, form#test fieldset label select.error, form#test fieldset label textarea.error {
+  form#exampleform fieldset label input[type=color].error, form#exampleform fieldset label input[type=range].error, form#exampleform fieldset label input[type=number].error, form#exampleform fieldset label input[type=date].error, form#exampleform fieldset label input[type=text].error, form#exampleform fieldset label input[type=email].error, form#exampleform fieldset label select.error, form#exampleform fieldset label textarea.error {
     border: solid 1px Red;
   }
-  form#test fieldset label span.notification {
+  form#exampleform fieldset label span.notification {
     color: Red;
   }
 
   /*
   	Submission summary
   */
-  form#test div.summary {
+  form#exampleform div.summary {
     margin: 0 0 1em 0;
   }
-  form#test div.summary div.failure {
+  form#exampleform div.summary div.failure {
     color: Red;
   }
-  form#test div.summary div.failure span.notification {
+  form#exampleform div.summary div.failure span.notification {
     display: block;
   }
-  form#test div.summary div.success {
+  form#exampleform div.summary div.success {
     color: Green;
   }
 
   /*
   	Form footer
   */
-  form#test div.footer {
+  form#exampleform div.footer {
     margin: 0 0 1em 0;
   }
-  form#test div.footer button {
+  form#exampleform div.footer button {
+    font-size: 16px;
+    font-size: 1rem;
+    font-family: Arial, Sans-Serif;
     float: right;
-  }
-
-  /*
-  	Colour input field
-  */
-  span.color, input.color, input[type=color] {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    *behavior: url(./js/boxsizing.htc);
-    display: block;
-    width: 100%;
-  }
-
-  span.color {
-    position: relative;
-  }
-  span.color span.color_button {
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
-    border-radius: 2px;
-    background: #ff000;
-    border: solid 1px #000;
-    cursor: pointer;
-    display: block;
-    font-size: 10px;
-    height: 15px;
-    line-height: 1;
-    margin: -8px 0 0 0;
-    overflow: hidden;
-    position: absolute;
-    right: 5px;
-    text-indent: 20px;
-    top: 50%;
-    width: 15px;
-  }
-
-  /*
-  	color popup
-  */
-  div.color_popup {
-    background: -webkit-gradient(linear, to bottom, to top, color-stop(0%, #ffffff), color-stop(80%, #ffffff), color-stop(80%, #ffffff), color-stop(100%, #cccccc));
-    background: -webkit-linear-gradient(to bottom, #ffffff 0%, #ffffff 80%, #ffffff 80%, #cccccc 100%);
-    background: -moz-linear-gradient(to bottom, #ffffff 0%, #ffffff 80%, #ffffff 80%, #cccccc 100%);
-    background: -o-linear-gradient(to bottom, #ffffff 0%, #ffffff 80%, #ffffff 80%, #cccccc 100%);
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 80%, #ffffff 80%, #cccccc 100%);
-    -webkit-box-shadow: 0 1px 3px #999999;
-    -moz-box-shadow: 0 1px 3px #999999;
-    box-shadow: 0 1px 3px #999999;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    background-color: #ffffff;
-    border: solid 1px #333;
-    position: absolute;
-    width: 16em;
-  }
-  div.color_popup fieldset {
-    border: none;
-    margin: 0;
-    padding: 1em 1em 0 1em;
-  }
-  div.color_popup fieldset label {
-    display: block;
-    height: 2em;
-    line-height: 2em;
-    margin: 0 0 1em 0;
-    padding: 0;
-    position: relative;
-    vertical-align: middle;
-  }
-  div.color_popup fieldset label input {
-    position: absolute;
-    right: 0;
-    text-align: right;
-    top: 0;
-    width: 8em;
-  }
-  div.color_popup fieldset span.range {
-    margin: 0 0 1em 0;
-  }
-
-  div.color_popup.color_hidden {
-    visibility: hidden;
-  }
-
-  div.color_popup.color_visible {
-    visibility: visible;
-  }
-
-  /*
-  	calendar input field
-  */
-  span.date, input.date, input[type=date] {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    *behavior: url(./js/boxsizing.htc);
-    display: block;
-    width: 100%;
-  }
-
-  span.date {
-    position: relative;
-  }
-  span.date span.date_button {
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
-    border-radius: 2px;
-    background: #ffffff;
-    border: solid 1px #000;
-    cursor: pointer;
-    display: block;
-    font-size: 10px;
-    height: 17px;
-    line-height: 1;
-    margin: -8px 0 0 0;
-    overflow: hidden;
-    position: absolute;
-    right: 5px;
-    text-align: center;
-    top: 50%;
-    width: 17px;
-  }
-  span.date span.date_button span {
-    display: block;
-    border-top: solid 4px #c00;
-  }
-
-  /*
-  	calendar popup
-  */
-  div.date_popup {
-    background: -webkit-gradient(linear, to bottom, to top, color-stop(0%, #ffffff), color-stop(80%, #ffffff), color-stop(80%, #ffffff), color-stop(100%, #cccccc));
-    background: -webkit-linear-gradient(to bottom, #ffffff 0%, #ffffff 80%, #ffffff 80%, #cccccc 100%);
-    background: -moz-linear-gradient(to bottom, #ffffff 0%, #ffffff 80%, #ffffff 80%, #cccccc 100%);
-    background: -o-linear-gradient(to bottom, #ffffff 0%, #ffffff 80%, #ffffff 80%, #cccccc 100%);
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 80%, #ffffff 80%, #cccccc 100%);
-    -webkit-box-shadow: 0 1px 3px #999999;
-    -moz-box-shadow: 0 1px 3px #999999;
-    box-shadow: 0 1px 3px #999999;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    background-color: #ffffff;
-    border: solid 1px #333;
-    position: absolute;
-    width: 24em;
-  }
-  div.date_popup strong, div.date_popup div.date_selectors {
-    left: 50%;
-    margin-left: -8em;
-    position: absolute;
-    text-align: center;
-    top: 1em;
-    width: 16em;
-  }
-  div.date_popup strong {
-    display: none;
-  }
-  div.date_popup div.date_selectors select {
-    margin: 2px;
-  }
-  div.date_popup button {
-    position: absolute;
-    padding: 0 5px;
-  }
-  div.date_popup button.date_previous_month {
-    left: 1em;
-    top: 1em;
-    padding: 0 10px;
-  }
-  div.date_popup button.date_next_month {
-    right: 1em;
-    top: 1em;
-    padding: 0 10px;
-  }
-  div.date_popup button.date_previous_year {
-    display: none;
-    left: 1em;
-    top: 1em;
-  }
-  div.date_popup button.date_next_year {
-    display: none;
-    right: 1em;
-    top: 1em;
-  }
-  div.date_popup button.date_today {
-    right: 1em;
-    bottom: 1em;
-  }
-  div.date_popup button.date_clear {
-    left: 1em;
-    bottom: 1em;
-  }
-  div.date_popup div.date_calendar {
-    padding: 4em 1em 4em 1em;
-  }
-  div.date_popup div.date_calendar table {
-    border-collapse: collapse;
-    border: solid 1px #666;
-    margin: 0;
-    width: 100%;
-  }
-  div.date_popup div.date_calendar table tr {
-    vertical-align: middle;
-  }
-  div.date_popup div.date_calendar table th, div.date_popup div.date_calendar table td {
-    border: solid 1px #666;
-    padding: 3px;
-    text-align: center;
-    width: 14%;
-  }
-  div.date_popup div.date_calendar table thead tr th {
-    background: #ccc;
-  }
-  div.date_popup div.date_calendar table thead tr th.date_first {
-    background: #bbb;
-  }
-  div.date_popup div.date_calendar table thead tr th.date_last {
-    background: #bbb;
-  }
-  div.date_popup div.date_calendar table tbody tr td {
-    background: #fff;
-  }
-  div.date_popup div.date_calendar table tbody tr td span, div.date_popup div.date_calendar table tbody tr td a {
-    color: #333;
-    display: block;
-    margin: -3px;
-    padding: 3px;
-    text-decoration: none;
-  }
-  div.date_popup div.date_calendar table tbody tr td a:hover {
-    background: #9cf;
-  }
-  div.date_popup div.date_calendar table tbody tr td span {
-    color: #999;
-  }
-  div.date_popup div.date_calendar table tbody tr td.date_first {
-    background: #eee;
-  }
-  div.date_popup div.date_calendar table tbody tr td.date_last {
-    background: #eee;
-  }
-  div.date_popup div.date_calendar table tbody tr td.date_current {
-    background: #69c;
-  }
-  div.date_popup div.date_calendar table tbody tr td.date_current span, div.date_popup div.date_calendar table tbody tr td.date_current a {
-    background: #69c;
-    color: #fff;
-  }
-
-  div.date_popup.date_hidden {
-    visibility: hidden;
-  }
-
-  div.date_popup.date_visible {
-    visibility: visible;
-  }
-
-  /*
-  	range input field
-  */
-  span.range, input[type=range] {
-    border: none;
-    display: block;
-    height: 24px;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-
-  span.range {
-    cursor: default;
-    position: relative;
-    text-align: center;
-  }
-  span.range input {
-    visibility: hidden;
-  }
-  span.range span.range_rails {
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666666), color-stop(100%, #cccccc));
-    background: -webkit-linear-gradient(top, #666666 0%, #cccccc 100%);
-    background: -moz-linear-gradient(top, #666666 0%, #cccccc 100%);
-    background: -o-linear-gradient(top, #666666 0%, #cccccc 100%);
-    background: linear-gradient(top, #666666 0%, #cccccc 100%);
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    background-color: #666666;
-    display: block;
-    height: 6px;
-    left: 0;
-    margin-top: -3px;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-  }
-  span.range span.range_button {
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ececec), color-stop(50%, #ececec), color-stop(51%, #f4f4f4), color-stop(100%, #ffffff));
-    background: -webkit-linear-gradient(top, #ececec 0%, #ececec 50%, #f4f4f4 51%, #ffffff 100%);
-    background: -moz-linear-gradient(top, #ececec 0%, #ececec 50%, #f4f4f4 51%, #ffffff 100%);
-    background: -o-linear-gradient(top, #ececec 0%, #ececec 50%, #f4f4f4 51%, #ffffff 100%);
-    background: linear-gradient(top, #ececec 0%, #ececec 50%, #f4f4f4 51%, #ffffff 100%);
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-    border-radius: 6px;
-    background-color: #ececec;
-    border: solid 1px #666;
-    display: block;
-    height: 12px;
-    left: 50%;
-    width: 12px;
-    margin-left: -7px;
-    margin-top: -7px;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-  }
-  span.range span.range_button.range_active {
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d2d2d2), color-stop(50%, #cfcfcf), color-stop(51%, #d6d6d6), color-stop(100%, #dddddd));
-    background: -webkit-linear-gradient(top, #d2d2d2 0%, #cfcfcf 50%, #d6d6d6 51%, #dddddd 100%);
-    background: -moz-linear-gradient(top, #d2d2d2 0%, #cfcfcf 50%, #d6d6d6 51%, #dddddd 100%);
-    background: -o-linear-gradient(top, #d2d2d2 0%, #cfcfcf 50%, #d6d6d6 51%, #dddddd 100%);
-    background: linear-gradient(top, #d2d2d2 0%, #cfcfcf 50%, #d6d6d6 51%, #dddddd 100%);
-    background-color: #d2d2d2;
-  }
-
-  /*
-  	file upload button
-  */
-  div.file {
-    cursor: pointer;
-    display: block;
-    overflow: hidden;
-    position: relative;
-  }
-  div.file input {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
-    opacity: 0.01;
-    cursor: pointer;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    font-size: 80px;
-    z-index: 1;
-  }
-  div.file div.file-readout {
-    display: inline;
-  }
-
-  div.file:before {
-    content: "Select file: ";
   }
 }
 @media all {
-  /*
-  	Link button
-  */
-  .button {
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(3%, #ffffff), color-stop(3%, #cccccc), color-stop(97%, #999999), color-stop(97%, #666666), color-stop(100%, #666666));
-    background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 3%, #cccccc 3%, #999999 97%, #666666 97%, #666666 100%);
-    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 3%, #cccccc 3%, #999999 97%, #666666 97%, #666666 100%);
-    background: -o-linear-gradient(top, #ffffff 0%, #ffffff 3%, #cccccc 3%, #999999 97%, #666666 97%, #666666 100%);
-    background: linear-gradient(top, #ffffff 0%, #ffffff 3%, #cccccc 3%, #999999 97%, #666666 97%, #666666 100%);
-    -webkit-box-shadow: 0 1px 3px #999999;
-    -moz-box-shadow: 0 1px 3px #999999;
-    box-shadow: 0 1px 3px #999999;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    background-color: #ccc;
-    border: solid 1px #000;
-    color: #333 !important;
+  button, .button {
+    -webkit-transition-property: background-color;
+    -moz-transition-property: background-color;
+    -o-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    height: 48px;
+    height: 3rem;
+    line-height: 48px;
+    line-height: 3rem;
+    padding-top: 0px;
+    padding-top: 0rem;
+    padding-right: 16px;
+    padding-right: 1rem;
+    padding-bottom: 0px;
+    padding-bottom: 0rem;
+    padding-left: 16px;
+    padding-left: 1rem;
+    background-color: #ff6a00;
+    border: none;
+    color: #fff;
     cursor: pointer;
     display: inline-block;
+    margin: 0;
     overflow: visible;
-    padding: 0 15px 1px 15px;
-    *padding: 0 15px 2px 15px;
-    text-shadow: #ccc 1px 1px 0;
-    text-decoration: none !important;
+    text-decoration: none;
   }
-
-  .button:hover {
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cccccc), color-stop(3%, #cccccc), color-stop(3%, #999999), color-stop(97%, #cccccc), color-stop(97%, #333333), color-stop(100%, #666666));
-    background: -webkit-linear-gradient(top, #cccccc 0%, #cccccc 3%, #999999 3%, #cccccc 97%, #333333 97%, #666666 100%);
-    background: -moz-linear-gradient(top, #cccccc 0%, #cccccc 3%, #999999 3%, #cccccc 97%, #333333 97%, #666666 100%);
-    background: -o-linear-gradient(top, #cccccc 0%, #cccccc 3%, #999999 3%, #cccccc 97%, #333333 97%, #666666 100%);
-    background: linear-gradient(top, #cccccc 0%, #cccccc 3%, #999999 3%, #cccccc 97%, #333333 97%, #666666 100%);
-    -webkit-box-shadow: 0 1px 2px #999999;
-    -moz-box-shadow: 0 1px 2px #999999;
-    box-shadow: 0 1px 2px #999999;
-    background-color: #999;
-    color: #000 !important;
+  button:hover, .button:hover {
+    background-color: #ff9800;
+    color: #fff;
+    text-decoration: none;
   }
-
-  /*
-  	Download button
-  */
-  .button.downloadButton {
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffcc), color-stop(3%, #ffffcc), color-stop(3%, #cccc99), color-stop(97%, #999966), color-stop(97%, #666633), color-stop(100%, #666633));
-    background: -webkit-linear-gradient(top, #ffffcc 0%, #ffffcc 3%, #cccc99 3%, #999966 97%, #666633 97%, #666633 100%);
-    background: -moz-linear-gradient(top, #ffffcc 0%, #ffffcc 3%, #cccc99 3%, #999966 97%, #666633 97%, #666633 100%);
-    background: -o-linear-gradient(top, #ffffcc 0%, #ffffcc 3%, #cccc99 3%, #999966 97%, #666633 97%, #666633 100%);
-    background: linear-gradient(top, #ffffcc 0%, #ffffcc 3%, #cccc99 3%, #999966 97%, #666633 97%, #666633 100%);
-    background-color: #996;
-    color: #330 !important;
-  }
-
-  .button.downloadButton:hover {
-    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cccc99), color-stop(3%, #cccc99), color-stop(3%, #999966), color-stop(97%, #cccc99), color-stop(97%, #333300), color-stop(100%, #666633));
-    background: -webkit-linear-gradient(top, #cccc99 0%, #cccc99 3%, #999966 3%, #cccc99 97%, #333300 97%, #666633 100%);
-    background: -moz-linear-gradient(top, #cccc99 0%, #cccc99 3%, #999966 3%, #cccc99 97%, #333300 97%, #666633 100%);
-    background: -o-linear-gradient(top, #cccc99 0%, #cccc99 3%, #999966 3%, #cccc99 97%, #333300 97%, #666633 100%);
-    background: linear-gradient(top, #cccc99 0%, #cccc99 3%, #999966 3%, #cccc99 97%, #333300 97%, #666633 100%);
-    background-color: #cc9;
-    color: #000 !important;
-  }
-
-  /*
-  	Form button
-  */
-  button.button {
-    line-height: 180%;
-    overflow: visible;
-    padding: 0 15px 0 15px;
+  button.disabled, button.disabled:hover, .button.disabled, .button.disabled:hover {
+    background-color: #7f7f7f;
   }
 }
