@@ -146,7 +146,7 @@
   }
 
   /*
-  	Error messages
+  	Error indicator
   */
   form#exampleform fieldset label.error {
     color: Red;
@@ -157,8 +157,60 @@
   form#exampleform fieldset label input[type=color].error, form#exampleform fieldset label input[type=range].error, form#exampleform fieldset label input[type=number].error, form#exampleform fieldset label input[type=date].error, form#exampleform fieldset label input[type=text].error, form#exampleform fieldset label input[type=email].error, form#exampleform fieldset label select.error, form#exampleform fieldset label textarea.error {
     border: solid 1px Red;
   }
-  form#exampleform fieldset label span.notification {
-    color: Red;
+
+  /*
+  	Error flags
+  */
+  div.form-flag {
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    -webkit-transition-duration: 500ms;
+    -moz-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 48px;
+    line-height: 3rem;
+    padding-top: 0px;
+    padding-top: 0rem;
+    padding-right: 16px;
+    padding-right: 1rem;
+    padding-bottom: 0px;
+    padding-bottom: 0rem;
+    padding-left: 16px;
+    padding-left: 1rem;
+    background-color: #ff6a00;
+    color: #fff;
+    margin-top: 12px;
+    position: absolute;
+  }
+  div.form-flag.form-flag-hidden {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    visibility: hidden\9;
+  }
+  div.form-flag.form-flag-visible {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    visibility: visible\9;
+  }
+  div.form-flag:after {
+    background: Transparent url(../img/form.png) no-repeat 0 0;
+    content: '';
+    display: block;
+    height: 10px;
+    left: 50%;
+    margin: 0 0 0 -16px;
+    position: absolute;
+    top: -10px;
+    width: 32px;
   }
 
   /*

@@ -38,13 +38,7 @@
 						// input and output elements
 						'input' : 'input, select, textarea',
 						'output' : 'div.summary',
-						// report strings
-						'failure' : '<div class="failure"><h3>Please correct the following problem(s):</h3>{0}</div>',
-						'success' : '<div class="success"><h3>The form has been received successfully.</h3>{0}</div>',
-						// ajax functionality
-						'ajax' : false,
-						'url' : null,
-						'method' : null
+						'message' : '<div class="failure"><h3>Please correct the following problem(s):</h3>{0}</div>'
 					});
 					form.start();
 				//-->

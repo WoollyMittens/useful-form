@@ -130,7 +130,7 @@
 		}
 	}
 	/*
-		Error messages
+		Error indicator
 	*/
 	form#exampleform {
 		fieldset {
@@ -144,10 +144,41 @@
 				input[type=color].error, input[type=range].error, input[type=number].error, input[type=date].error, input[type=text].error, input[type=email].error, select.error, textarea.error {
 					border : solid 1px Red;
 				}
-				span.notification {
-					color : Red;
-				}
 			}
+		}
+	}
+	/*
+		Error flags
+	*/
+	div.form-flag {
+		@include transition-property(opacity);
+		@include transition-timing-function(ease);
+		@include transition-duration(500ms);
+		@include rem('font-size', 1);
+		@include rem('line-height', 3);
+		@include rems('padding', 0, 1, 0, 1);
+		background-color : $color-passive;
+		color : #fff;
+		margin-top : 12px;
+		position : absolute;
+		&.form-flag-hidden {
+			@include opacity(0);
+			visibility : hidden\9;
+		}
+		&.form-flag-visible {
+			@include opacity(1);
+			visibility : visible\9;
+		}
+		&:after {
+			background : Transparent url(../img/form.png) no-repeat 0 0;
+			content : '';
+			display : block;
+			height : 10px;
+			left : 50%;
+			margin : 0 0 0 -16px;
+			position : absolute;
+			top : -10px;
+			width : 32px;
 		}
 	}
 	/*
