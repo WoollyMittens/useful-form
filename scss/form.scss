@@ -5,36 +5,13 @@
 	@import "compass/css3";
 	@import "compass/utilities";
 	@import "_definitions";
-	@import "_buttons";
+	@import "_typography" ;
 	/*
 		Form layout
 	*/
 	form#exampleform {
 		* {
 			@include box-sizing(border-box);
-		}
-		fieldset {
-			@include rems('margin', 0, 0, 1, 0);
-			display : block;
-			padding : 0;
-		}
-		> fieldset {
-			> legend {
-				@include rems('margin', 0, 0, 0.5, 0);
-				display : block;
-				font-weight : bold;
-			}
-		}
-	}
-	/*
-		Form fields
-	*/
-	form#exampleform {
-		> fieldset {
-			> label {
-				display : block;
-				position : relative;
-			}
 		}
 		fieldset {
 			label {
@@ -49,37 +26,10 @@
 					display : block;
 				}
 				input[type=color], input[type=range], input[type=number], input[type=date], input[type=text], input[type=email], select, textarea {
-					@include box-shadow(inset 0 0 5px #ccc);
-					@include rem('height', 3);
-					@include rem('font-size', 1);
-					@include rem('padding', 0.7);
-					@include rems('margin', 0.7, 0, 0.7, 0);
-					background : #fff;
-					border : solid 1px #333;
 					display : block;
-					font-family : Arial, Sans-Serif;
 					width : 100%;
 				}
-				input[type=checkbox], input[type=radio] {
-					@include rems('margin', 0.7, 0.3, 0.7, 0);
-					vertical-align : baseline;
-				}
-				select {
-					@include rem('height', 3);
-					@include rem('padding', 0.7);
-				}
-				textarea {
-					@include rem('height', 10);
-					@include rem('padding', 0.7);
-				}
 			}
-		}
-	}
-	/*
-		Groupings of field
-	*/
-	form#exampleform {
-		fieldset {
 			fieldset {
 				margin : 0;
 				label {
@@ -89,7 +39,18 @@
 		}
 	}
 	/*
-		Fields arranged in a line
+		Fields arranged in a column
+	*/
+	form#exampleform {
+		> fieldset {
+			> label {
+				display : block;
+				position : relative;
+			}
+		}
+	}
+	/*
+		Fields arranged in a row
 	*/
 	form#exampleform {
 		fieldset {
