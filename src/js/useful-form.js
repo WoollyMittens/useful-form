@@ -31,6 +31,8 @@
 			this.cfg.summary = useful.transitions.select(this.cfg.output, this.obj);
 			// note that the form has not yet been submitted
 			this.cfg.submitted = false;
+			// disable the start function so it can't be started twice
+			this.start = function () {};
 		};
 		this.validateField = function (element, strict) {
 			// get the element properties
@@ -159,6 +161,8 @@
 				if (!result) { event.preventDefault(); }
 			};
 		};
+		// go
+		this.start();
 	};
 
 }(window.useful = window.useful || {}));
