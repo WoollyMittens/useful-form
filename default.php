@@ -29,9 +29,9 @@
 			<aside>
 
 				<!-- Cut below this -->
-				<style>@import url("./css/form.css")</style>
-				<?php include("./php/form.php"); ?>
-				<script src="./js/form.min.js"></script>
+				<style>@import url("./inc/css/useful-form.css");</style>
+				<?php include("./inc/php/form.php"); ?>
+				<script src="./inc/js/useful-form.js"></script>
 				<script>
 				//<!--
 					var form = new useful.Form( document.getElementById('exampleform'), {
@@ -40,7 +40,6 @@
 						'output' : 'div.summary',
 						'message' : '<div class="failure"><h3>Please correct the following problem(s):</h3>{0}</div>'
 					});
-					form.start();
 				//-->
 				</script>
 				<!-- Cut above this -->
