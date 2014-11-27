@@ -34,8 +34,8 @@
 				<script src="./inc/js/useful-form.js"></script>
 				<script>
 				//<!--
-					var form = new useful.Form( document.getElementById('exampleform'), {
-						// input and output elements
+					var form = new useful.Form().init({
+						'element' : document.getElementById('exampleform'),
 						'input' : 'input, select, textarea',
 						'output' : 'div.summary',
 						'message' : '<div class="failure"><h3>Please correct the following problem(s):</h3>{0}</div>'

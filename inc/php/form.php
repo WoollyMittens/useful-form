@@ -1,7 +1,7 @@
 <?php
 /*
 	Source:
-	van Creij, Maurice (2012). "form.php: A simple contact form", version 20120606, http://www.woollymittens.nl/.
+	van Creij, Maurice (2014). "form.php: A simple contact form", version 20141127, http://www.woollymittens.nl/.
 
 	License:
 	This work is licensed under a Creative Commons Attribution 3.0 Unported License.

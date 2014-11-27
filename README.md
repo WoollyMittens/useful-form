@@ -31,7 +31,8 @@ To enable the use of HTML5 tags in Internet Explorer 8 and lower, include *html5
 ## How to start the script
 
 ```javascript
-var form = new useful.Form( document.getElementById('id'), {
+var form = new useful.Form().init({
+	'element' : document.getElementById('id'),
 	'input' : 'input, select, textarea',
 	'output' : 'div.summary',
 	'message' : '<div class="failure"><h3>Please correct the following problem(s):</h3>{0}</div>'
