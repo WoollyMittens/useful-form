@@ -124,11 +124,8 @@ form#exampleform fieldset label input[type=color].error, form#exampleform fields
 */
 /* line 109, ../../src/scss/useful-form.scss */
 div.form-flag {
-  -webkit-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
-  -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
   font-size: 12px;
   font-size: 1rem;
