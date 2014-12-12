@@ -279,11 +279,11 @@ var useful = useful || {};
 })();
 
 /*
-	Source:
-	van Creij, Maurice (2014). "useful.positions.js: A library of useful functions to ease working with screen positions.", version 20141127, http://www.woollymittens.nl/.
+Source:
+van Creij, Maurice (2014). "useful.positions.js: A library of useful functions to ease working with screen positions.", version 20141127, http://www.woollymittens.nl/.
 
-	License:
-	This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+License:
+This work is licensed under a Creative Commons Attribution 3.0 Unported License.
 */
 
 // public object
@@ -325,15 +325,15 @@ var useful = useful || {};
 				position.y = parent.scrollTop;
 			} else {
 				position.x = (window.pageXOffset) ?
-					window.pageXOffset :
-					(document.documentElement) ?
-						document.documentElement.scrollLeft :
-						document.body.scrollLeft;
+				window.pageXOffset :
+				(document.documentElement) ?
+				document.documentElement.scrollLeft :
+				document.body.scrollLeft;
 				position.y = (window.pageYOffset) ?
-					window.pageYOffset :
-					(document.documentElement) ?
-						document.documentElement.scrollTop :
-						document.body.scrollTop;
+				window.pageYOffset :
+				(document.documentElement) ?
+				document.documentElement.scrollTop :
+				document.body.scrollTop;
 			}
 			// return the object
 			return position;
@@ -363,8 +363,16 @@ var useful = useful || {};
 			// define a position object
 			var position = {x : 0, y : 0};
 			// find the current position on the document
-			position.x = event.pageX || event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-			position.y = event.pageY || event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+			if (event.touches && event.touches[0]) {
+				position.x = event.touches[0].pageX;
+				position.y = event.touches[0].pageY;
+			} else if (event.pageX !== undefined) {
+				position.x = event.pageX;
+				position.y = event.pageY;
+			} else {
+				position.x = event.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft);
+				position.y = event.clientY + (document.documentElement.scrollTop || document.body.scrollTop);
+			}
 			// if a parent was given
 			if (parent) {
 				// retrieve the position of the parent
@@ -566,35 +574,40 @@ var useful = useful || {};
 	This work is licensed under a Creative Commons Attribution 3.0 Unported License.
 */
 
-// create the constructor if needed
+// create the global object if needed
 var useful = useful || {};
-useful.Form = useful.Form || function () {};
 
-// extend the constructor
-useful.Form.prototype.init = function (cfg) {
-	// properties
+// extend the global object
+useful.Form = function () {
+
+	// PROPERTIES
+
 	"use strict";
-	this.cfg = cfg;
-	this.obj = cfg.element;
-	// methods
-	this.start = function () {
+
+	// METHODS
+
+	this.init = function (config) {
+		// store the config
+		this.config = config;
+		this.element = config.element;
 		// set the form submit event
-		this.obj.addEventListener('submit', this.onFormSubmitted(), false);
+		this.element.addEventListener('submit', this.onFormSubmitted(), false);
 		// make a place to store the flag
-		this.cfg.flag = null;
+		this.config.flag = null;
 		// for all the fields
-		this.cfg.fields = useful.transitions.select(this.cfg.input, this.obj);
-		for (var a = 0, b = this.cfg.fields.length; a < b; a += 1) {
+		this.config.fields = useful.transitions.select(this.config.input, this.element);
+		for (var a = 0, b = this.config.fields.length; a < b; a += 1) {
 			// set the field change event
-			this.cfg.fields[a].addEventListener('change', this.onFieldChanged(this.cfg.fields[a]), false);
+			this.config.fields[a].addEventListener('change', this.onFieldChanged(this.config.fields[a]), false);
 		}
 		// store the summary space
-		this.cfg.summary = useful.transitions.select(this.cfg.output, this.obj);
+		this.config.summary = useful.transitions.select(this.config.output, this.element);
 		// note that the form has not yet been submitted
-		this.cfg.submitted = false;
-		// disable the start function so it can't be started twice
-		this.init = function () {};
+		this.config.submitted = false;
+		// return the object
+		return this;
 	};
+
 	this.validateField = function (element, strict) {
 		// get the element properties
 		var peers, a, b,
@@ -626,43 +639,48 @@ useful.Form.prototype.init = function (cfg) {
 		// return the result
 		return {'element' : element, 'passed' : passed, 'message' : element.getAttribute('data-message')};
 	};
+
 	this.flagField = function (result) {
 		console.log(result);
 		var position = useful.positions.object(result.element);
 		// remove any old flag
 		this.unflagField();
 		// construct the flag
-		this.cfg.flag = document.createElement('div');
-		this.cfg.flag.className = 'form-flag form-flag-hidden';
-		this.cfg.flag.innerHTML = result.message;
-		document.body.appendChild(this.cfg.flag);
+		this.config.flag = document.createElement('div');
+		this.config.flag.className = 'form-flag form-flag-hidden';
+		this.config.flag.innerHTML = result.message;
+		document.body.appendChild(this.config.flag);
 		// position the flag near the bottom and centre of the field
-		this.cfg.flag.style.position = 'absolute';
-		this.cfg.flag.style.left = (position.x + result.element.offsetWidth / 2 - this.cfg.flag.offsetWidth / 2) + 'px';
-		this.cfg.flag.style.top = (position.y + result.element.offsetHeight) + 'px';
+		this.config.flag.style.position = 'absolute';
+		this.config.flag.style.left = (position.x + result.element.offsetWidth / 2 - this.config.flag.offsetWidth / 2) + 'px';
+		this.config.flag.style.top = (position.y + result.element.offsetHeight) + 'px';
 		// reveal the flag
-		this.cfg.flag.className = 'form-flag form-flag-visible';
+		this.config.flag.className = 'form-flag form-flag-visible';
 	};
+
 	this.unflagField = function () {
 		// remove the flag from any field
-		if (this.cfg.flag !== null) {
-			this.cfg.flag.parentNode.removeChild(this.cfg.flag);
-			this.cfg.flag = null;
+		if (this.config.flag !== null) {
+			this.config.flag.parentNode.removeChild(this.config.flag);
+			this.config.flag = null;
 		}
 	};
+
 	this.markField = function (result) {
 		result.element.className = result.element.className.replace(/ error/g, '') + ' error';
 	};
+
 	this.unmarkField = function (result) {
 		result.element.className = result.element.className.replace(/ error/g, '');
 	};
+
 	this.validateForm = function () {
 		var a, b, summary = '', result, first = true;
 		// remove the flag
 		this.unflagField();
 		// check all fields strictly
-		for (a = 0, b = this.cfg.fields.length; a < b; a += 1) {
-			result = this.validateField(this.cfg.fields[a], true);
+		for (a = 0, b = this.config.fields.length; a < b; a += 1) {
+			result = this.validateField(this.config.fields[a], true);
 			// if the check fails
 			if (!result.passed) {
 				// mark the field
@@ -683,17 +701,20 @@ useful.Form.prototype.init = function (cfg) {
 			}
 		}
 		// report a summary
-		if (this.cfg.summary.length > 0) {
-			this.cfg.summary[0].innerHTML = (summary !== '') ? this.cfg.message.replace(/\{0\}/g, '<ul>' + summary + '</ul>') : '';
+		if (this.config.summary.length > 0) {
+			this.config.summary[0].innerHTML = (summary !== '') ? this.config.message.replace(/\{0\}/g, '<ul>' + summary + '</ul>') : '';
 		}
 		// return result
 		return (summary === '');
 	};
+
+	// EVENTS
+
 	this.onFieldChanged = function (element) {
 		var result, _this = this;
 		return function () {
 			// if the form was previously submitted
-			if (_this.cfg.submitted) {
+			if (_this.config.submitted) {
 				// recheck the whole thing
 				_this.validateForm();
 			// else check just this field
@@ -711,20 +732,18 @@ useful.Form.prototype.init = function (cfg) {
 			}
 		};
 	};
+
 	this.onFormSubmitted = function () {
 		var _this = this;
 		return function (event) {
 			// note that the form has been submitted once
-			_this.cfg.submitted = true;
+			_this.config.submitted = true;
 			// check the form
 			var result = _this.validateForm();
 			// allow the submit or not
 			if (!result) { event.preventDefault(); }
 		};
 	};
-	// go
-	this.start();
-	return this;
 };
 
 // return as a require.js module
