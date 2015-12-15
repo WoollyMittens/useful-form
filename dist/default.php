@@ -29,9 +29,9 @@
 			<aside>
 
 				<!-- Cut below this -->
-				<style>@import url("./inc/css/useful-form.css");</style>
-				<?php include("./inc/php/form.php"); ?>
-				<script src="./inc/js/useful-form.js"></script>
+				<style>@import url("./css/useful-form.css");</style>
+				<?php include("./php/form.php"); ?>
+				<script src="./js/useful-form.js"></script>
 				<script>
 				//<!--
 					var form = new useful.Form().init({

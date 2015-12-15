@@ -1,12 +1,12 @@
-@import "compass/css3";
-@import "compass/utilities";
+
+
 @import "mixins";
 /*
 	Form layout
 */
 form#exampleform {
 	* {
-		@include box-sizing(border-box);
+		box-sizing: border-box;
 	}
 	fieldset {
 		label {
@@ -107,9 +107,9 @@ form#exampleform {
 	Error flags
 */
 div.form-flag {
-	@include transition-property(opacity);
-	@include transition-timing-function(ease);
-	@include transition-duration(500ms);
+	transition-property: opacity;
+	transition-timing-function: ease;
+	transition-duration: 500ms;
 	@include rem('font-size', 1);
 	@include rem('line-height', 3);
 	@include rems('padding', 0, 1, 0, 1);
@@ -118,11 +118,11 @@ div.form-flag {
 	margin-top : 12px;
 	position : absolute;
 	&.form-flag-hidden {
-		@include opacity(0);
+		opacity: 0;
 		visibility : hidden\9;
 	}
 	&.form-flag-visible {
-		@include opacity(1);
+		opacity: 1;
 		visibility : visible\9;
 	}
 	&:after {

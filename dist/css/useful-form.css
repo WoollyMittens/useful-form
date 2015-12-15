@@ -1,0 +1,159 @@
+/*
+Constants
+*/
+/*
+Hides text in the margin
+*/
+/*
+Turns a button into an icon
+*/
+/*
+Centres a graphic or glyph inside an icon
+*/
+/*
+Offers both the pixel and rem value of a single property
+*/
+/*
+Offers both the pixel and rem values of a shorthand property
+*/
+/*
+Offers the text size as both the pixel and rem value
+*/
+/*
+Adds vendor prefixed to a property
+*/
+/*
+Applies the "clearfix" hack to a container with floating content
+*/
+/*
+	Form layout
+*/
+form#exampleform * {
+  box-sizing: border-box; }
+
+form#exampleform fieldset label em {
+  color: Red;
+  font-weight: bold; }
+
+form#exampleform fieldset label input {
+  vertical-align: middle; }
+
+form#exampleform fieldset label input[type=file] {
+  display: block; }
+
+form#exampleform fieldset label input[type=color], form#exampleform fieldset label input[type=range], form#exampleform fieldset label input[type=number], form#exampleform fieldset label input[type=date], form#exampleform fieldset label input[type=text], form#exampleform fieldset label input[type=email], form#exampleform fieldset label select, form#exampleform fieldset label textarea {
+  display: block;
+  width: 100%; }
+
+form#exampleform fieldset fieldset {
+  margin: 0; }
+  form#exampleform fieldset fieldset label {
+    margin-right: 10px; }
+
+/*
+	Fields arranged in a column
+*/
+form#exampleform > fieldset > label {
+  display: block;
+  position: relative; }
+
+/*
+	Fields arranged in a row
+*/
+form#exampleform fieldset fieldset.line > label {
+  display: inline-block;
+  line-height: 0;
+  text-indent: -999em;
+  vertical-align: top; }
+
+form#exampleform fieldset fieldset.line label .small {
+  width: 4em; }
+
+form#exampleform fieldset fieldset.line label .large {
+  width: 8em; }
+
+form#exampleform fieldset fieldset.line label .medium {
+  width: 6em; }
+
+/*
+	Checkboxes arranged in a list
+*/
+form#exampleform fieldset fieldset.list legend {
+  display: none; }
+
+form#exampleform fieldset fieldset.list label {
+  display: block; }
+
+/*
+	Error indicator
+*/
+form#exampleform fieldset label.error {
+  color: Red; }
+  form#exampleform fieldset label.error input[type=color], form#exampleform fieldset label.error input[type=range], form#exampleform fieldset label.error input[type=number], form#exampleform fieldset label.error input[type=date], form#exampleform fieldset label.error input[type=text], form#exampleform fieldset label.error input[type=email], form#exampleform fieldset label.error select, form#exampleform fieldset label.error textarea {
+    border: solid 1px Red; }
+
+form#exampleform fieldset label input[type=color].error, form#exampleform fieldset label input[type=range].error, form#exampleform fieldset label input[type=number].error, form#exampleform fieldset label input[type=date].error, form#exampleform fieldset label input[type=text].error, form#exampleform fieldset label input[type=email].error, form#exampleform fieldset label select.error, form#exampleform fieldset label textarea.error {
+  border: solid 1px Red; }
+
+/*
+	Error flags
+*/
+div.form-flag {
+  transition-property: opacity;
+  transition-timing-function: ease;
+  transition-duration: 500ms;
+  font-size: 12px;
+  font-size: 1rem;
+  line-height: 36px;
+  line-height: 3rem;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-right: 12px;
+  padding-right: 1rem;
+  padding-bottom: 0px;
+  padding-bottom: 0rem;
+  padding-left: 12px;
+  padding-left: 1rem;
+  background-color: #ff6a00;
+  color: #fff;
+  margin-top: 12px;
+  position: absolute; }
+  div.form-flag.form-flag-hidden {
+    opacity: 0;
+    visibility: hidden\9; }
+  div.form-flag.form-flag-visible {
+    opacity: 1;
+    visibility: visible\9; }
+  div.form-flag:after {
+    background: Transparent url(../img/form.png) no-repeat 0 0;
+    content: '';
+    display: block;
+    height: 10px;
+    left: 50%;
+    margin: 0 0 0 -16px;
+    position: absolute;
+    top: -10px;
+    width: 32px; }
+
+/*
+	Submission summary
+*/
+form#exampleform div.summary {
+  margin: 0 0 1em 0; }
+  form#exampleform div.summary div.failure {
+    color: Red; }
+    form#exampleform div.summary div.failure span.notification {
+      display: block; }
+  form#exampleform div.summary div.success {
+    color: Green; }
+
+/*
+	Form footer
+*/
+form#exampleform div.footer {
+  margin: 0 0 1em 0; }
+  form#exampleform div.footer button {
+    font-size: 12px;
+    font-size: 1rem;
+    font-family: Arial, Sans-Serif;
+    float: right; }
