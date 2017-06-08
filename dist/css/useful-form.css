@@ -29,6 +29,7 @@ Applies the "clearfix" hack to a container with floating content
 	Form layout
 */
 form#exampleform * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 form#exampleform fieldset label em {
@@ -99,8 +100,11 @@ form#exampleform fieldset label input[type=color].error, form#exampleform fields
 	Error flags
 */
 div.form-flag {
+  -webkit-transition-property: opacity;
   transition-property: opacity;
+  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
+  -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
   font-size: 12px;
   font-size: 1rem;
