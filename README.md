@@ -1,4 +1,4 @@
-# useful.form.js: HTML5 Form Functionality
+# form.js: HTML5 Form Functionality
 
 A form using HTML5 form elements, that validates both client- and server-side and stores the entries in XML.
 
@@ -11,27 +11,19 @@ Please note that the PHP form was created for demonstration purposes only.
 The stylesheet is best included in the header of the document.
 
 ```html
-<link rel="stylesheet" href="./css/useful-form.css"/>
+<link rel="stylesheet" href="./css/form.css"/>
 ```
 
 This include can be added to the header or placed inline before the script is invoked.
 
 ```html
-<script src="./js/useful-form.js"></script>
-```
-
-To enable the use of HTML5 tags in Internet Explorer 8 and lower, include *html5.js*.
-
-```html
-<!--[if lte IE 9]>
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+<script src="./js/form.js"></script>
 ```
 
 ## How to start the script
 
 ```javascript
-var form = new useful.Form().init({
+var form = new Form({
 	'element' : document.getElementById('id'),
 	'input' : 'input, select, textarea',
 	'output' : 'div.summary',

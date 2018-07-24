@@ -1,0 +1,206 @@
+/*
+	Form layout
+*/
+#exampleform {
+	* {
+		box-sizing: border-box;
+	}
+
+	fieldset {
+		label {
+			em {
+				color: Red;
+				font-weight: bold;
+			}
+
+			input {
+				vertical-align: middle;
+			}
+
+			input[type=file] {
+				display: block;
+			}
+
+			input[type=color],
+			input[type=date],
+			input[type=email],
+			input[type=number],
+			input[type=range],
+			input[type=text],
+			select,
+			textarea {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		fieldset {
+			margin: 0;
+
+			label {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+/*
+	Fields arranged in a column
+*/
+#exampleform {
+	> fieldset {
+		> label {
+			display: block;
+			position: relative;
+		}
+	}
+}
+/*
+	Fields arranged in a row
+*/
+#exampleform {
+	fieldset {
+		.line {
+			> label {
+				display: inline-block;
+				line-height: 0;
+				text-indent: -999em;
+				vertical-align: top;
+			}
+
+			label {
+				.small {
+					width: 4em;
+				}
+
+				.large {
+					width: 8em;
+				}
+
+				.medium {
+					width: 6em;
+				}
+			}
+		}
+	}
+}
+/*
+	Checkboxes arranged in a list
+*/
+#exampleform {
+	fieldset {
+		.list {
+			legend {
+				display: none;
+			}
+
+			label {
+				display: block;
+			}
+		}
+	}
+}
+/*
+	Error indicator
+*/
+#exampleform {
+	fieldset {
+		.error {
+			color: Red;
+
+			input[type=color],
+			input[type=date],
+			input[type=email],
+			input[type=number],
+			input[type=range],
+			input[type=text],
+			select,
+			textarea {
+				border: solid 1px Red;
+			}
+		}
+
+		label {
+			input[type=color].error,
+			input[type=date].error,
+			input[type=email].error,
+			input[type=number].error,
+			input[type=range].error,
+			input[type=text].error,
+			select.error,
+			textarea.error {
+				border: solid 1px Red;
+			}
+		}
+	}
+}
+/*
+	Error flags
+*/
+.form-flag {
+	transition-property: opacity;
+	transition-timing-function: ease;
+	transition-duration: 500ms;
+	font-size: 1rem;
+	line-height: 3rem;
+	padding: 0rem 1rem;
+	background-color: $color-passive;
+	color: #fff;
+	margin-top: 12px;
+	position: absolute;
+
+	&.form-flag-hidden {
+		opacity: 0;
+		visibility: hidden\9;
+	}
+
+	&.form-flag-visible {
+		opacity: 1;
+		visibility: visible\9;
+	}
+
+	&:after {
+		background: Transparent url("../img/form.png") no-repeat 0 0;
+		content: '';
+		display: block;
+		height: 10px;
+		left: 50%;
+		margin: 0 0 0 -16px;
+		position: absolute;
+		top: -10px;
+		width: 32px;
+	}
+}
+/*
+	Submission summary
+*/
+#exampleform {
+	.summary {
+		margin: 0 0 1em;
+
+		.failure {
+			color: Red;
+
+			.notification {
+				display: block;
+			}
+		}
+
+		.success {
+			color: Green;
+		}
+	}
+}
+/*
+	Form footer
+*/
+#exampleform {
+	.footer {
+		margin: 0 0 1em;
+
+		button {
+			font-size: 1rem;
+			font-family: Arial, Sans-Serif;
+			float: right;
+		}
+	}
+}

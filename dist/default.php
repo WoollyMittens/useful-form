@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>useful.form.js: HTML5 Form Functionality</title>
+		<title>form.js: HTML5 Form Functionality</title>
 		<style>
 			html { font-family:Sans-Serif; font-size:75%; height:100%; }
 			body { _height:100%; line-height:180%; margin:0; min-height:100%; padding:1%; }
@@ -12,12 +12,6 @@
 			.example-right > article, .example-right > aside { width:48%; padding:1%; float:right; }
 			fieldset { border:none; }
 		</style>
-		<!--[if IE]>
-			<meta http-equiv="imagetoolbar" content="no"/>
-			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-			<script src="./js/html5.js"></script>
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<![endif]-->
 	</head>
 	<body>
 		<section class="example example-right">
@@ -29,12 +23,12 @@
 			<aside>
 
 				<!-- Cut below this -->
-				<style>@import url("./css/useful-form.css");</style>
+				<style>@import url("./css/form.css");</style>
 				<?php include("./php/form.php"); ?>
-				<script src="./js/useful-form.js"></script>
+				<script src="./js/form.js"></script>
 				<script>
 				//<!--
-					var form = new useful.Form().init({
+					var form = new Form({
 						'element' : document.getElementById('exampleform'),
 						'input' : 'input, select, textarea',
 						'output' : 'div.summary',

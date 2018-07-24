@@ -1,20 +1,15 @@
 /*
 	Source:
-	van Creij, Maurice (2014). "useful.form.js: Client side form validation", version 20141127, http://www.woollymittens.nl/.
+	van Creij, Maurice (2018). "form.js: Client side form validation", http://www.woollymittens.nl/.
 
 	License:
 	This work is licensed under a Creative Commons Attribution 3.0 Unported License.
 */
 
-// create the global object if needed
-var useful = useful || {};
-
-// extend the global object
-useful.Form = function () {
+// establish the class
+var Form = function (config) {
 
 	// PROPERTIES
-
-	"use strict";
 
 	// METHODS
 
@@ -23,17 +18,17 @@ useful.Form = function () {
 		this.config = config;
 		this.element = config.element;
 		// set the form submit event
-		this.element.addEventListener('submit', this.onFormSubmitted(), false);
+		this.element.addEventListener('submit', this.onFormSubmitted.bind(this), false);
 		// make a place to store the flag
 		this.config.flag = null;
 		// for all the fields
-		this.config.fields = useful.transitions.select(this.config.input, this.element);
+		this.config.fields = transitions.select(this.config.input, this.element);
 		for (var a = 0, b = this.config.fields.length; a < b; a += 1) {
 			// set the field change event
-			this.config.fields[a].addEventListener('change', this.onFieldChanged(this.config.fields[a]), false);
+			this.config.fields[a].addEventListener('change', this.onFieldChanged.bind(this, this.config.fields[a]), false);
 		}
 		// store the summary space
-		this.config.summary = useful.transitions.select(this.config.output, this.element);
+		this.config.summary = transitions.select(this.config.output, this.element);
 		// note that the form has not yet been submitted
 		this.config.submitted = false;
 		// return the object
@@ -74,7 +69,7 @@ useful.Form = function () {
 
 	this.flagField = function (result) {
 		console.log(result);
-		var position = useful.positions.object(result.element);
+		var position = positions.object(result.element);
 		// remove any old flag
 		this.unflagField();
 		// construct the flag
@@ -143,42 +138,39 @@ useful.Form = function () {
 	// EVENTS
 
 	this.onFieldChanged = function (element) {
-		var result, _this = this;
-		return function () {
-			// if the form was previously submitted
-			if (_this.config.submitted) {
-				// recheck the whole thing
-				_this.validateForm();
-			// else check just this field
+		var result;
+		// if the form was previously submitted
+		if (this.config.submitted) {
+			// recheck the whole thing
+			this.validateForm();
+		// else check just this field
+		} else {
+			// check the field
+			result = this.validateField(element, false);
+			// flag the field
+			if (!result.passed) {
+				this.markField(result);
+				this.flagField(result);
 			} else {
-				// check the field
-				result = _this.validateField(element, false);
-				// flag the field
-				if (!result.passed) {
-					_this.markField(result);
-					_this.flagField(result);
-				} else {
-					_this.unmarkField(result);
-					_this.unflagField();
-				}
+				this.unmarkField(result);
+				this.unflagField();
 			}
-		};
+		}
 	};
 
-	this.onFormSubmitted = function () {
-		var _this = this;
-		return function (event) {
-			// note that the form has been submitted once
-			_this.config.submitted = true;
-			// check the form
-			var result = _this.validateForm();
-			// allow the submit or not
-			if (!result) { event.preventDefault(); }
-		};
+	this.onFormSubmitted = function (evt) {
+		// note that the form has been submitted once
+		this.config.submitted = true;
+		// check the form
+		var result = this.validateForm();
+		// allow the submit or not
+		if (!result) { evt.preventDefault(); }
 	};
+
+	this.init(config);
 };
 
 // return as a require.js module
 if (typeof module !== 'undefined') {
-	exports = module.exports = useful.Form;
+	exports = module.exports = Form;
 }
