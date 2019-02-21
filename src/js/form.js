@@ -171,6 +171,5 @@ var Form = function (config) {
 };
 
 // return as a require.js module
-if (typeof module !== 'undefined') {
-	exports = module.exports = Form;
-}
+if (typeof define != 'undefined') define(['form'], function () { return Form });
+if (typeof module != 'undefined') module.exports = Form;
