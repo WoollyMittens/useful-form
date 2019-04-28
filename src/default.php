@@ -25,6 +25,8 @@
 				<!-- Cut below this -->
 				<style>@import url("./css/form.css");</style>
 				<?php include("./php/form.php"); ?>
+				<script src="./lib/positions.js"></script>
+				<script src="./lib/transitions.js"></script>
 				<script src="./js/form.js"></script>
 				<script>
 				//<!--

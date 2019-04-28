@@ -25,8 +25,8 @@
 				<!-- Cut below this -->
 				<style>@import url("./css/form.css");</style>
 				<form action="default.php" id="exampleform" method="get" novalidate>
-					<input type="hidden" name="form_submitted" value="true"/>
-					<input type="hidden" name="url" value=""/>
+					<input type="hidden" name="form_submitted" value="true" />
+					<input type="hidden" name="url" value="" />
 					<fieldset>
 						<legend>Example Form</legend>
 						<fieldset>
@@ -34,60 +34,70 @@
 								<label for="form_title_m">Radio Options<em>*</em>:</label>
 							</legend>
 							<label>
-								<input name="form_myradio" class="type_radio " required type="radio" data-message="No radio was chosen." title="My Radio" value="a" />				Mr.
+								<input name="form_myradio" class="type_radio " required type="radio" data-message="No radio was chosen." title="My Radio" value="a" /> Mr.
 							</label>
 							<label>
-								<input name="form_myradio" class="type_radio " required type="radio" data-message="No radio was chosen." title="My Radio" value="b" />				Ms.
+								<input name="form_myradio" class="type_radio " required type="radio" data-message="No radio was chosen." title="My Radio" value="b" /> Ms.
 							</label>
-									</fieldset>
+						</fieldset>
 						<label>
 							Text Input<em>*</em>:
-							<input name="form_mytext" pattern="^.+$" class="type_text " required type="text" data-message="No text entered." title="My Text" value="" />					</label>
+							<input name="form_mytext" pattern="^.+$" class="type_text " required type="text" data-message="No text entered." title="My Text" value="" /> </label>
 						<label>
 							Select List<em>*</em>:
-							<select name="form_myselect" class="type_select " required data-message="No option was chosen." title="My selection" ><option value="" selected="selected">-</option><option value="A">Option A</option><option value="B">Option B</option></select>					</label>
+							<select name="form_myselect" class="type_select " required data-message="No option was chosen." title="My selection">
+								<option value="" selected="selected">-</option>
+								<option value="A">Option A</option>
+								<option value="B">Option B</option>
+							</select> </label>
 						<fieldset class="line">
 							<legend>
 								<label for="form_myprefix">Multi Field Inputs<em>*</em>:</label>
 							</legend>
 							<label>
 								Prefix:
-								<select name="form_myprefix" class="type_select small" required data-message="No prefix was selected." title="My Prefix" ><option value="" selected="selected">-</option><option value="A">Option A</option><option value="B">Option B</option></select>			</label>
+								<select name="form_myprefix" class="type_select small" required data-message="No prefix was selected." title="My Prefix">
+									<option value="" selected="selected">-</option>
+									<option value="A">Option A</option>
+									<option value="B">Option B</option>
+								</select> </label>
 							<label>
 								Number:
-								<input name="form_mynumber" pattern="^\d+$" class="type_number text large" required type="number" placeholder="number" data-message="No number was entered." title="My Number" value="" />			</label>
-												</fieldset>
+								<input name="form_mynumber" pattern="^\d+$" class="type_number text large" required type="number" placeholder="number" data-message="No number was entered." title="My Number" value="" /> </label>
+						</fieldset>
 						<label>
 							Email<em>*</em>:
-							<input name="form_myemail" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" class="type_email " required type="email" placeholder="name@domain.com" data-message="No email was entered." title="My Email" value="" />					</label>
+							<input name="form_myemail" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" class="type_email " required type="email" placeholder="name@domain.com" data-message="No email was entered." title="My Email" value="" /> </label>
 						<label>
 							File<em>*</em>:
-							<input name="form_myfile" pattern="^.+$" class="type_file file" type="file" data-message="No file was selected." title="My File" value="" />					</label>
+							<input name="form_myfile" pattern="^.+$" class="type_file file" type="file" data-message="No file was selected." title="My File" value="" /> </label>
 					</fieldset>
 					<fieldset>
 						<legend>Your Comments</legend>
 						<label>
 							Message:
-							<textarea name="form_comments" class="type_textarea " data-message="No comments were entered." title="Message" ></textarea>					</label>
+							<textarea name="form_comments" class="type_textarea " data-message="No comments were entered." title="Message"></textarea> </label>
 						<fieldset class="list">
 							<legend>
 								<label for="form_option_a">Options:</label>
 							</legend>
 							<label>
-								<input name="form_updates" class="type_checkbox " type="checkbox" data-message="You have not signed up for updates." title="Options" value="1" />				Sign me up for updates
+								<input name="form_updates" class="type_checkbox " type="checkbox" data-message="You have not signed up for updates." title="Options" value="1" /> Sign me up for updates
 							</label>
-										<label>
-								<input name="form_agree" class="type_checkbox " required type="checkbox" data-message="You have not agreed to the terms and conditions." title="Agreement" value="1" />				I agree with the <a href="#">terms and conditions</a><em>*</em>
+							<label>
+								<input name="form_agree" class="type_checkbox " required type="checkbox" data-message="You have not agreed to the terms and conditions." title="Agreement" value="1" /> I agree with the <a href="#">terms and conditions</a><em>*</em>
 							</label>
-									</fieldset>
+						</fieldset>
 					</fieldset>
 					<div class="summary">
-							</div>
+					</div>
 					<div class="footer">
 						<button class="button" type="submit" name="form_submit">Submit</button>
 						<em>* Indicates a required field</em>
 					</div>
 				</form>
+				<script src="./lib/positions.js"></script>
+				<script src="./lib/transitions.js"></script>
 				<script src="./js/form.js"></script>
 				<script>
 				//<!--
