@@ -2,8 +2,6 @@
 
 A form using HTML5 form elements, that validates both client- and server-side and stores the entries in XML.
 
-Try the <a href="http://www.woollymittens.nl/default.php?url=useful-form">demo</a>.
-
 Please note that the PHP form was created for demonstration purposes only.
 
 ## How to include the script
